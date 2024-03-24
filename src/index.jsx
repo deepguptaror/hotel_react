@@ -17,7 +17,7 @@ class Hotels extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {hotels: [{id: 1, name: 'Moon Light', location: 'Indore', desc: "djhjkhjkh", no_of_rooms: 5},{id: 2, name: 'Moon Light', location: 'Indore', desc: "djhjkhjkh", no_of_rooms: 5},{id: 3, name: 'Moon Light', location: 'Indore', desc: "djhjkhjkh", no_of_rooms: 5}], hotel_id: undefined, hotel_name: undefined};
+    this.state = {hotels: [], hotel_id: undefined, hotel_name: undefined};
 
     // This binding is necessary to make `this` work in the callback
     this.hotelsList = this.hotelsList.bind(this);
@@ -50,6 +50,7 @@ class Hotels extends React.Component {
     e.preventDefault();
     this.setState({hotel_id: e.target.getAttribute('data-value'), hotel_name: e.target.getAttribute('data-name') });
     console.log(e.target.getAttribute('data-name'));
+    console.log(this.state)
   }
 
   searchHotels(event) {
